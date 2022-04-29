@@ -31,12 +31,21 @@ int main(int argc, char *argv[]) {
     return 0;
 }
     </pre>
+    <script src="./ace-builds/src-noconflict/ace.js"></script>
     <script src="./ace-builds/src-noconflict/keybinding-vscode.js"></script>
+    <script src="./ace-builds/src-noconflict/ext-language_tools.js"></script>
     <script src="./ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
     <script>
+        ace.require("ace/ext/language_tools");
         var editor = ace.edit("editor");
-        editor.setTheme("ace/theme/twilight");
-        editor.session.setMode("ace/mode/c_cpp");
+        editor.setOptions({
+            enableBasicAutocompletion: true,
+            enableSnippets: false,
+            enableLiveAutocompletion: true,
+            theme: "ace/theme/twilight",
+            mode: "ace/mode/c_cpp",
+            autoScrollEditorIntoView: true,
+        });
     </script>
 </body>
 
